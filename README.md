@@ -1,4 +1,4 @@
 GalleryJS
 =========
 
-Try a simple gallery project using GruntJS + AngularJS + NodeJS + Bootstrap
+Try a simple gallery project using Yeoman + AngularJS + NodeJS + Bootstrap
