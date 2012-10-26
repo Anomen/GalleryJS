@@ -31,6 +31,21 @@ app.configure('development', function(){
 app.get('/', routes.index);
 app.get('/users', user.list);
 
-http.createServer(app).listen(app.get('port'), function(){
+var server = http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
+});
+
+var io = require('socket.io').listen(server);
+
+io.sockets.on('connection', function (socket) {
+    socket.on('request', function (data) {
+        var uniqId  = data.uniqId;
+        var controller = data.controller;
+        var action  = data.action;
+        var data    = data.data;
+
+        var controller = require('./controllers/' + controller);
+        var result = controller[action](data);
+        socket.emit(uniqId, result);
+    });
 });

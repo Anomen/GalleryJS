@@ -1,11 +1,10 @@
 'use strict';
-
-var galleryJSApp = angular.module('galleryJSApp', [])
+var galleryJSApp = angular.module('galleryJSApp', ['ModelService', 'CoreService'])
   .config(['$routeProvider', function($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        templateUrl: 'views/layout.html',
+        controller: 'LayoutCtrl'
       })
       .otherwise({
         redirectTo: '/'
