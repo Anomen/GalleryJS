@@ -8,11 +8,9 @@
     };
 
     // Expose the class to angularJS
-    //if (typeof angular != 'undefined') {
-    //    angular.module('ModelService', []).factory('FileModel', function() {
-    //        return Model;
-    //    });
-    //}
+    if (typeof angular != 'undefined') {
+        angular.module('CoreService').constant('µConfig', config);
+    }
 
     // Expose the class to nodejs
     if (typeof module != 'undefined')

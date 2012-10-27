@@ -15,10 +15,6 @@ module.exports = (function(){
     FileModel.prototype.getStat = function(){
         var stat = fs.statSync(config.root + this.path + this.filename);
 
-		//this.id         = MD5 (path + filename);
-        //this.filename   = filename;
-        //this.path       = path;
-
         this.lastModified = stat.mtime;
         this.isFile      = stat.isFile();
         this.isFolder    = !this.isFile;
@@ -77,6 +73,7 @@ module.exports = (function(){
         };
 
         this.resize = function(width, destFolder, successCb){
+            var self = this;
             // Add the process to the queue
             Queue.add(destFolder + self.path + self.filename, function(next){
                 // create the cache destination

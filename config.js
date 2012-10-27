@@ -11,7 +11,7 @@ var configClient = require(__dirname + '/app/config')
         // Don't touch
         imageExt: /(JPG|JPEG|jpg|jpeg)$/,
 
-        thumbAbsoluteDir: __dirname + '/public/' + configClient.thumbRelativeDir,
-        previewAbsoluteDir: __dirname + '/public/' + configClient.previewRelativeDir
+        thumbAbsoluteDir: __dirname + '/app/' + configClient.thumbRelativeDir,
+        previewAbsoluteDir: __dirname + '/app/' + configClient.previewRelativeDir
     });
 //});

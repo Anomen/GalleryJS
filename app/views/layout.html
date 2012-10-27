@@ -16,9 +16,13 @@
 		</div>
 		<div class="span9">
 			<p>Please, click on a folder to see the pictures.</p>
-            <li ng-repeat="folder in folders | filter:{isFile:true}">
-                <a href="#/?path={{routeParams.path}}/{{folder.filename}}">{{folder.filename}}</a>
-            </li>
+            <ul class="thumbnails">
+                <li ng-repeat="file in folders | filter:{isFile:true}">
+                    <a href="#" class="thumbnail" style="height: 170px; width: 300px">
+                        <img src='{{config.thumbRelativeDir}}{{file.thumbUrl}}' class="img-rounded" style="max-height: 170px; max-width: 300px" />
+                    </a>
+                </li>
+            </ul>
 		</div>
 	</div>
 
