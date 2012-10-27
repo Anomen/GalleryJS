@@ -8,12 +8,17 @@
 			<div class="well sidebar-nav">
                 <ul class="nav nav-list">
                     <li class="nav-header">Folders</li>
-                    <li ng-repeat="folder in folders"><a href="#">{{folder.filename}}</a></li>
+                    <li ng-repeat="folder in folders | filter:{isFolder:true}">
+                        <a href="#/?path={{routeParams.path}}/{{folder.filename}}">{{folder.filename}}</a>
+                    </li>
                 </ul>
             </div>
 		</div>
 		<div class="span9">
 			<p>Please, click on a folder to see the pictures.</p>
+            <li ng-repeat="folder in folders | filter:{isFile:true}">
+                <a href="#/?path={{routeParams.path}}/{{folder.filename}}">{{folder.filename}}</a>
+            </li>
 		</div>
 	</div>
 

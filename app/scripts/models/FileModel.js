@@ -1,4 +1,4 @@
-(function(angular){
+(function(){
     var Model = function(params) {
         this.path         = params.path         || '';
         this.filename     = params.filename     || '';
@@ -6,6 +6,9 @@
         this.isFolder     = params.isFolder     || false;
         this.hasPreview   = params.hasPreview   || false;
         this.hasThumb     = params.hasThumb     || false;
+
+        if (this.path[this.path.length-1] != "/")
+            this.path = this.path + "/";
 
         this.thumbUrl = /*config.thumbRelativeDir
             +*/ this.path
@@ -24,10 +27,14 @@
             + this.filename;
     };
 
-    // Expose the class
+    // Expose the class to angularJS
     if (typeof angular != 'undefined') {
         angular.module('ModelService', []).factory('FileModel', function() {
             return Model;
         });
     }
-})(angular);
+
+    // Expose the class to nodejs
+    if (typeof module != 'undefined')
+        module.exports = Model;
+})();

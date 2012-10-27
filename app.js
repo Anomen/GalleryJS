@@ -45,7 +45,8 @@ io.sockets.on('connection', function (socket) {
         var data    = data.data;
 
         var controller = require('./controllers/' + controller);
-        var result = controller[action](data);
-        socket.emit(uniqId, result);
+        controller[action](data, function(result){
+            socket.emit(uniqId, result);
+        });
     });
 });
