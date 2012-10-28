@@ -9,7 +9,7 @@
 
     // Expose the class to angularJS
     if (typeof angular != 'undefined') {
-        angular.module('CoreService').constant('µConfig', config);
+        angular.module('core.service').constant('µConfig', config);
     }
 
     // Expose the class to nodejs

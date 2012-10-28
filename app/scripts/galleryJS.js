@@ -1,5 +1,7 @@
 'use strict';
-var galleryJSApp = angular.module('galleryJSApp', ['ModelService', 'CoreService'])
+
+var galleryJSApp = angular.module('galleryJSApp', ['ModelService', 'core', 'sandbox'])
+	/*
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider
             .when('/', {
@@ -10,3 +12,8 @@ var galleryJSApp = angular.module('galleryJSApp', ['ModelService', 'CoreService'
                 redirectTo: '/'
             });
     }]);
+	*/
+	.run(function(µModule){
+        //µModule.register('folders');
+        µModule.startAll();
+	});
