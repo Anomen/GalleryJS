@@ -12,7 +12,5 @@
         }
     };
 
-    angular.module('core.service').factory('µModule', function(){
-        return new Module;
-    });
+    angular.module('core.service').service('µModule', Module);
 })();

@@ -1,16 +1,16 @@
 'use strict';
 
-angular.module('galleryJSApp').controller('Test', function(sb){
-    sb.scope = {
-        folders     : [],
-        routeParams : sb.route.params,
-        config      : sb.config
-    };
+angular.module('galleryJSApp').controller('Test', function(sb, $scope){
+    $scope.folders     = [];
+    $scope.routeParams = sb.route.params;
+    $scope.config      = sb.config;
 
     // Request data from the server
     sb.socket.request('files', 'fetch', {path: (sb.route.params.path || '')}, 
         function(data){
-            sb.scope.folders = data;
+            $scope.$apply(function(){
+                $scope.folders = data;
+            });
         });
 })
 .config(['$routeProvider', function($routeProvider) {

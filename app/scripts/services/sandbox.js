@@ -1,10 +1,11 @@
 'use strict'; 
 
 (function(angular){
-    var Sandbox = function(µSocket, µMediator, µRoute, $rootScope){
-        this.scope  = $rootScope;
+    var Sandbox = function(µSocket, µConfig, µMediator, µRoute, $rootScope){
+        //this.scope  = $rootScope.$new();
         this.socket = µSocket;
         this.events = µMediator;
+        this.config = µConfig;
 
         this.route = {
             params: µRoute.params,

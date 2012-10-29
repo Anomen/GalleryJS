@@ -6,7 +6,5 @@
         }
     };
 
-    angular.module('core.service').factory('µMediator', function(){
-        return new Mediator;
-    });
+    angular.module('core.service').service('µMediator', Mediator);
 })();

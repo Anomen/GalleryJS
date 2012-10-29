@@ -17,7 +17,5 @@
         }
     };
 
-    angular.module('core.service').factory('µSocket', function(){
-        return new CoreSocket;
-    });
+    angular.module('core.service').service('µSocket', CoreSocket);
 })(io);
