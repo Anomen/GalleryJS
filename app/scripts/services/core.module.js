@@ -2,10 +2,11 @@
     var Module = function() {
 		console.log('Mediator Instance');
         this.register = function(name){
-            require(['scripts/modules/' + name + '/module'], function(module){
+            //require(['scripts/modules/' + name + '/module'], function(module){
                 console.log('register ' + name);
-                //module();
-            });
+                var sb = angular.injector(['ng', name]);
+            //    new module(sb);
+            //});
         }
         this.startAll = function(){
             console.log('start all');

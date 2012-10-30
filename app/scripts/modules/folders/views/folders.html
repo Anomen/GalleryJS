@@ -1,4 +1,4 @@
-<ul class="nav nav-list">
+<ul class="nav nav-list" ng-controller='Folders'>
     <li class="nav-header">Folders</li>
     <li ng-repeat="folder in folders | filter:{isFolder:true}">
         <a href="#/?path={{routeParams.path}}/{{folder.filename}}">{{folder.filename}}</a>

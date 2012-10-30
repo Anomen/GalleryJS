@@ -1,8 +1,22 @@
 (function(){
     var Mediator = function() {
-		console.log('Mediator Instance');
-        this.emit = function(){
-            console.log('emit');
+        console.log("construct Mediator");
+        this.events = {};
+
+        this.on = function(moduleName, eventName, callback){
+            this.events[moduleName] = this.events[moduleName] || {};
+            this.events[moduleName][eventName] = this.events[moduleName][eventName] || [];
+
+            this.events[moduleName][eventName].push(callback);
+        };
+
+        this.emit = function(moduleName, eventName, eventData){
+            this.events[moduleName] = this.events[moduleName] || {};
+            this.events[moduleName][eventName] = this.events[moduleName][eventName] || [];
+
+            this.events[moduleName][eventName].each(function(callback){
+                callback(eventData);
+            });
         }
     };
 
