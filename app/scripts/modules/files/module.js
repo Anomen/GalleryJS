@@ -3,6 +3,7 @@
 (function(angular){
     angular.module('files', ['core'])
         .controller('Files', function(µConfig, µMediator, $scope, $routeParams){
+        console.log($scope);
             $scope.files       = [];
             $scope.routeParams = $routeParams;
             $scope.config      = µConfig;

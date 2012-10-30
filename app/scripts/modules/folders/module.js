@@ -2,12 +2,6 @@
 
 (function(angular){
     angular.module('folders', ['core'])
-        .config(['$routeProvider', function($routeProvider) {
-            $routeProvider.when('/', {
-                templateUrl: 'views/layout.html',
-                controller: 'Folders'
-            });
-        }])
         .controller('Folders', function(µConfig, µMediator, µSocket, $scope, $routeParams){
             $scope.folders     = [];
             $scope.routeParams = $routeParams;
