@@ -5,13 +5,11 @@
 	</div>
 	<div class="row-fluid">
 		<div class="span3">
-            <!--<div class="well sidebar-nav" ng-include src="'scripts/modules/folders/views/folders.html'"></div>-->
             <div id='folders'></div>
 		</div>
 		<div class="span9">
 			<p>Please, click on a folder to see the pictures.</p>
-            <!--<div ng-include src="'scripts/modules/files/views/files.html'"></div>-->
-            <div data-files></div>
+            <div id='files'></div>
 		</div>
 	</div>
 

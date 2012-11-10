@@ -1,7 +1,7 @@
 //var requirejs = require('requirejs')
   //, _ = require('underscore');
 
-var configClient = require(__dirname + '/app/config')
+var configClient = require(__dirname + '/app/scripts/config')
   , _ = require('underscore');
 
 //requirejs(['./public/config.js'], function(config){

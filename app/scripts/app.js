@@ -1,8 +1,26 @@
-'use strict';
+define(['core'], function(core){
+    'use strict';
 
-angular.module('app', ['ModelService', 'core', 'folders', 'files'])
-    .config(['$routeProvider', function($routeProvider) {
-        $routeProvider.when('/', {
-            templateUrl: 'views/layout.html'
-        });
+    core.start([{
+        channel: 'layout',
+    }, {
+        channel: 'folders',
+        options: {
+            element: '#folders'
+        }
     }]);
+
+/*
+    var el = document.getElementById('folders');                                     
+            
+    el.innerHTML = "<div ng-controller='toto'>Hello {{'World'}}</div>";
+    angular.bootstrap(el);
+
+    angular.module('app', [])
+        .config(['$routeProvider', function($routeProvider) {
+            $routeProvider.when('/', {
+                templateUrl: 'views/layout.html'
+            });
+        }]);
+*/
+});
