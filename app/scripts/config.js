@@ -7,9 +7,9 @@
         thumbRelativeDir: 'thumbs/'
     };
 
-    // Expose the class to angularJS
-    if (typeof angular != 'undefined') {
-        angular.module('core.service').constant('µConfig', config);
+    // Expose the class to the client
+    if (typeof define != 'undefined') {
+        define(config);
     }
 
     // Expose the class to nodejs

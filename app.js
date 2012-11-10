@@ -39,10 +39,12 @@ var io = require('socket.io').listen(server);
 
 io.sockets.on('connection', function (socket) {
     socket.on('request', function (data) {
-        var uniqId  = data.uniqId;
+        var uniqId     = data.uniqId;
         var controller = data.controller;
-        var action  = data.action;
-        var data    = data.data;
+        var action     = data.action;
+        var data       = data.data;
+
+        console.log(data);
 
         var controller = require('./controllers/' + controller);
         controller[action](data, function(result){

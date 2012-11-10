@@ -8,6 +8,11 @@ define(['core'], function(core){
         options: {
             element: '#folders'
         }
+    }, {
+        channel: 'files',
+        options: {
+            element: '#files'
+        }
     }]);
 
 /*

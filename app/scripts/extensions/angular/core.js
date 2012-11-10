@@ -1,8 +1,5 @@
-define(['aura_core', 'angular'], function(core){
+define(['angular'], function(){
     'use strict';
 
-    var auraCore = Object.create(core);
-    auraCore.angular = angular;
-  
-    return auraCore;
+    return angular;
 });
