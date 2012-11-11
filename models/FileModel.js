@@ -1,10 +1,10 @@
-var FileModelClient = require(__dirname + '/../app/scripts/models/FileModel.js');
+var FileModelClient = require(__dirname + '/../public/scripts/models/FileModel.js');
 
 var fs = require('fs')
   , config = require('../config')
   , im = require('imagemagick')
   , mkdirp = require('mkdirp')
-  , Queue = require('../lib/queue')
+  , Queue = require('../libs/queue')
 
 module.exports = (function(){
     var FileModel = function(params){

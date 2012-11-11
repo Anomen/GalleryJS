@@ -13,7 +13,7 @@ var app = express();
 
 app.configure(function(){
   app.set('port', process.env.PORT || 3000);
-  app.set('views', __dirname + '/app');
+  app.set('views', __dirname + '/public');
   app.set('view engine', 'html');
   app.engine('html', require('ejs').renderFile);
   app.use(express.favicon());
@@ -21,7 +21,7 @@ app.configure(function(){
   app.use(express.bodyParser());
   app.use(express.methodOverride());
   app.use(app.router);
-  app.use(express.static(path.join(__dirname, 'app')));
+  app.use(express.static(path.join(__dirname, 'public')));
 });
 
 app.configure('development', function(){
