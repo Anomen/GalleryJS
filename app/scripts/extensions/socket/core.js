@@ -1,4 +1,14 @@
-define(['/socket.io/socket.io.js'], function(){
+requirejs.config({
+    shim: {
+        socketio: {
+            exports: 'io'
+        }
+    },
+    paths: {
+        socketio: '/socket.io/socket.io.js'
+    }
+});
+define(['socketio'], function(){
     'use strict';
 
     // Initialize the socket connection

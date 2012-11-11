@@ -1,11 +1,12 @@
 requirejs.config({
     paths: {
-        'signals': 'extensions/router/lib/signals',
-        'hasher' : 'extensions/router/lib/hasher'
+        signals    : 'extensions/router/vendor/signals',
+        hasher     : 'extensions/router/vendor/hasher',
+        crossroads : 'extensions/router/vendor/crossroads',
     }
 });
 
-define(['./lib/crossroads', 'hasher'], function(crossroads, hasher){
+define(['crossroads', 'hasher'], function(crossroads, hasher){
     'use strict';
     
     //setup hasher
