@@ -1,8 +1,9 @@
+/*global define*/
 define(['core'], function(core){
     'use strict';
 
     core.start([{
-        channel: 'layout',
+        channel: 'layout'
     }, {
         channel: 'folders',
         options: {

@@ -1,3 +1,4 @@
+/*global define*/
 define(['aura_core', 'extensions/angular/core', 'extensions/socket/core', 'extensions/router/core'], function(AuraCore, AngularCore, SocketCore, RouterCore){
     'use strict';
 

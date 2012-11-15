@@ -1,8 +1,9 @@
+/*global requirejs, define, crossroads*/
 requirejs.config({
     paths: {
         signals    : 'extensions/router/vendor/signals',
         hasher     : 'extensions/router/vendor/hasher',
-        crossroads : 'extensions/router/vendor/crossroads',
+        crossroads : 'extensions/router/vendor/crossroads'
     }
 });
 
@@ -17,8 +18,9 @@ define(['crossroads', 'hasher'], function(crossroads, hasher){
     var router = {};
     router.routes = {};
     router.on = function(path, fn){
-        if (typeof router.routes[path] === 'undefined')
+        if (typeof router.routes[path] === 'undefined') {
             router.routes[path] = crossroads.addRoute(path);
+        }
 
         router.routes[path].matched.add(fn);
         router.routes[path].greedy = true;

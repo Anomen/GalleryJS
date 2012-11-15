@@ -1,3 +1,4 @@
+/*global define*/
 define(['aura_sandbox', 'config', 'core', 'perms'], function(AuraSandbox, config, core, perms) {
     'use strict';
   
@@ -30,7 +31,9 @@ define(['aura_sandbox', 'config', 'core', 'perms'], function(AuraSandbox, config
     sandbox.angular = {};
     sandbox.angular.module = function() {
         var uniqId = new Date().getTime();
-        return core.angular.module("module"+uniqId, []);
+        var module = core.angular.module("module"+uniqId, []);
+        module.service('sandbox', function(){ return sandbox; });
+        return module;
     };
 
     sandbox.angular.bootstrap = core.angular.bootstrap;

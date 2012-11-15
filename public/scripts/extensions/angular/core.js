@@ -1,3 +1,4 @@
+/*global requirejs, angular, define*/
 requirejs.config({
     shim: {
         angular: {

@@ -1,7 +1,8 @@
-define(["sandbox"], function(sandbox){ 
+/*global define*/
+(function(){
     'use strict';
     
-    var Ctrl = function($scope){
+    var __export = function(sandbox, $scope){
         $scope.files  = [];
         $scope.config = sandbox.config;
 
@@ -12,6 +13,8 @@ define(["sandbox"], function(sandbox){
         });
     };
 
-    return Ctrl;
-});
-
+    // Expose the class to requirejs
+    if (typeof define !== 'undefined') {
+        define(function(){ return __export; });
+    }
+})();

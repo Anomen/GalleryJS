@@ -1,7 +1,8 @@
-define(["sandbox"], function(sandbox){ 
+/*global define, console*/
+(function(){
     'use strict';
     
-    var Ctrl = function($scope){
+    var __export = function(sandbox, $scope){
         $scope.folders     = [];
         $scope.routeParams = {
             path: '/'
@@ -29,6 +30,8 @@ define(["sandbox"], function(sandbox){
         });
     };
 
-    return Ctrl;
-});
-
+    // Expose the class to requirejs
+    if (typeof define !== 'undefined') {
+        define(function(){ return __export; });
+    }
+})();

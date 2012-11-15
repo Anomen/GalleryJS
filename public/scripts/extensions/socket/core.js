@@ -1,3 +1,4 @@
+/*global requirejs, define, io*/
 requirejs.config({
     shim: {
         socketio: {
@@ -8,6 +9,7 @@ requirejs.config({
         socketio: '/socket.io/socket.io.js'
     }
 });
+
 define(['socketio'], function(){
     'use strict';
 

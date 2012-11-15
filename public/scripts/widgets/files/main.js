@@ -1,7 +1,8 @@
-define(['sandbox', './controllers', './views'], function(sandbox, Controllers, Views){
+/*global define*/
+(function(){
     'use strict';
 
-    return function(options){
+    var __export = function(options, sandbox, Controllers, Views){
         // Define a new angular module
         var module = sandbox.angular.module();
 
@@ -14,4 +15,11 @@ define(['sandbox', './controllers', './views'], function(sandbox, Controllers, V
             sandbox.angular.bootstrap(el, [module.name]);
         });
     };
-});
+
+    // Expose the function to requirejs
+    if (typeof define !== 'undefined') {
+        define(['sandbox', './controllers', './views'], function(sandbox, controllers, views){
+            return function(options){ return __export(options, sandbox, controllers, views); };
+        });
+    }
+})();

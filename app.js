@@ -1,4 +1,3 @@
-
 /**
  * Module dependencies.
  */
@@ -26,12 +25,15 @@ app.configure('development', function(){
   app.use(express.errorHandler());
 });
 
+// Single Page Application: only load the index page
 app.get('/', function(req, res){ res.render('index') });
 
+// Start the server
 var server = http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
 });
 
+// Listen to websocket connections
 var io = require('socket.io').listen(server);
 
 io.sockets.on('connection', function (socket) {
@@ -41,8 +43,7 @@ io.sockets.on('connection', function (socket) {
         var action     = data.action;
         var data       = data.data;
 
-        console.log(data);
-
+        // Load the proper controller and action
         var controller = require('./controllers/' + controller);
         controller[action](data, function(result){
             socket.emit(uniqId, result);

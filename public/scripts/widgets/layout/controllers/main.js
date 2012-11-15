@@ -1,10 +1,13 @@
+/*global define*/
 (function(){
     'use strict';
     
-    var Ctrl = function($scope){
+    var __export = function(sandbox){
     };
 
     // Expose the controller
-    define(["sandbox"], function(sandbox){ return Ctrl; });
+    if (typeof define !== 'undefined') {
+        define(function(){ return __export; });
+    }
 })();
 

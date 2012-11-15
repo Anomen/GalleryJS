@@ -1,3 +1,4 @@
+/*global define, requirejs, require*/
 // Define call just to make enforceDefine check happy
 define(function() {
 
@@ -5,7 +6,7 @@ define(function() {
 
   // Aura configuration object is separate from require.config so we can have
   // access to it in src/aura/base.js
-  require.aura = {
+  require.config({
 
       // [RequireJS](http://requirejs.org/) 2.0+ plus has error callbacks (errbacks)
       // which provide per-require error handling. To utilize this feature
@@ -21,7 +22,7 @@ define(function() {
       // Uncomment if you would like to support cache busting
       // urlArgs: "bust=v2",
   
-      deps: ['app'],
+      //deps: ['app'],
   
       shim: {
           'dom': {
@@ -53,9 +54,10 @@ define(function() {
   
           // App
           perms: 'permissions'
-      },
-  };
+      }
+  });
 
-  require.config( require.aura );
+  require.aura = requirejs.s.contexts._.config;
+  require(['app'], function(){});
 
 });
